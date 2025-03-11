@@ -1,0 +1,4 @@
+defaults:
+  - dataset: qm9
+
+root: /home/kisin/kisin/gen-gpt/data

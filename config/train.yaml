@@ -1,0 +1,42 @@
+#root: /scratch/kisin/gen-gpt
+root: /home/kisin/kisin/gen-gpt
+#wandb_dir: /scratch/kisin/gen-gpt
+wandb_dir: /home/kisin/kisin/gen-gpt/
+wandb_project: GEN-GPT
+wandb_entity: kisinberke
+backend: nccl
+device: cuda
+compile: True
+# -------------- run config---------------
+dataset_name: qm9-r16-bfs
+casual_name: False
+checkpoint_name: qm9-r16-bfs-final
+wandb_name: qm9-r16-bfs-final
+# ---------------model details----------------
+edge_attn: True
+num_layers: 6
+num_heads: 8
+embed_dim: 384
+bias: True
+dropout: 0.1
+weight_decay: 1e-1
+learning_rate: 6e-4 
+batch_size: 784
+grad_accum_steps: 2
+warmup_iters: 0
+num_iters: 30000
+grad_clip: 1.0
+eval_iters: 50
+eval_interval: 100
+log_interval: 200
+loss_coeff: 1.0
+target_sizes:
+  node: 5
+  edge: 4
+  special: 2
+gen:
+  batch_size: 512
+  steps: 30
+  top_k:
+    edge: 2
+    node: 4

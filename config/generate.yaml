@@ -1,0 +1,21 @@
+#root: /scratch/kisin/gen-gpt
+root: /home/kisin/kisin/gen-gpt
+device: cuda
+draw: True
+save_sequence: False
+mol_dir: molecules
+exp_name: mol-fix
+data: mols #mols #grid
+# -------- model---------
+checkpoint: qm9-r16-bfs_fix
+edge_attn: True
+compile: False
+batch_size: 200
+steps: 30
+top_k:
+  edge: 3
+  node: 5
+seed: 10
+
+
+
